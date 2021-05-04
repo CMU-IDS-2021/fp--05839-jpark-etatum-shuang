@@ -190,7 +190,19 @@ def get_data():
 	return calendar_pd, listing_pd, review_pd, review_map_new
 
 
-calendar_pd, listing_pd, review_pd, review_map_new = get_data()
+@st.cache
+def get_data_cached():
+	import pickle
+	calendar_pd = pd.read_csv("./Data/processed/calendar.csv")
+	listing_pd = pd.read_csv("./Data/processed/listing.csv")
+	review_pd = pd.read_csv("./Data/processed/review.csv")
+	with open('./Data/processed/review_map.pkl', 'rb') as f:
+		review_map_new = pickle.load(f)
+
+	return calendar_pd, listing_pd, review_pd, review_map_new
+
+
+calendar_pd, listing_pd, review_pd, review_map_new = get_data_cached()
 
 
 def generate_line_chart_all(
