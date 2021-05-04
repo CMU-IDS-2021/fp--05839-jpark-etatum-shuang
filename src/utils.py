@@ -439,3 +439,27 @@ def generate_raw_chart(
 
 ):
 	return calendar_pd.head(), listing_pd.head(), review_pd.head(), review_map_new[2015]
+
+
+def generate_bar_chart(
+
+):
+	for i in ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"]:
+		tr = review_pd[review_pd.date.map(lambda x: x.startswith(i))]
+		print( tr[tr["positive"] == "positive"].count() / tr.count())
+	d = {'year': ["2010", "2011", "2012", "2013", "2014", "2015", "2016", "2017", "2018", "2019", "2020", "2021"],
+		 'positive rate': [1, 0.875, 1, 0.985, 0.946, 0.947, 0.943, 0.911, 0.909, 0.91,  0.93, 0.89]}
+
+	pdd = pd.DataFrame(data=d)
+	chart = alt.Chart(pdd).mark_bar(
+		color='lightblue',
+		opacity=0.8
+	).encode(
+		x=alt.X('year:N'),
+		y=alt.Y('positive rate:Q', scale=alt.Scale(domain=[0.7, 1])),
+	).properties(
+		width=700,
+		height=400,
+		title="positive review rate "
+	).interactive()
+	return chart
