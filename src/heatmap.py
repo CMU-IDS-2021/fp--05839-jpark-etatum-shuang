@@ -6,10 +6,10 @@ from src.utils import generate_heatmap
 def heatmap_chart():
 	# headers and stuff
 	st.header("Part 3: Heatmap of Airbnb occupancy rate")
-	st.markdown("First, we took a state and national view to the data to understand the breakdown segmentations of data in Yelp. Select from the slider on the left to switch between views.")
 
 	# generate second chart
-	st.markdown("")
+	st.markdown("Now comes the interesting part, what are the occupancy rate of Airbnb housing? "
+				"The following heatmap will tell you about it.")
 	chart1 = generate_heatmap()
 	st.plotly_chart(chart1)
 

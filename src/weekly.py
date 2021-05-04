@@ -6,10 +6,12 @@ from src.utils import generate_violin_chart
 def violin_chart():
 	# headers and stuff
 	st.header("Part 2: Weekly price of Airbnb housing")
-	st.markdown("First, we took a state and national view to the data to understand the breakdown segmentations of data in Yelp. Select from the slider on the left to switch between views.")
+
 
 	# generate second chart
-	st.markdown("")
+	st.markdown("The second part of our project is to explore trends between different days of week. We assume that "
+				"work days housing prices are lower than weekends. We made a violin chart to prove our point. "
+				"Same as usual, select the years you want to visualize and prove it by yourself.")
 	year = st.selectbox('choose the years you want to visualize',
 						[2015, 2016, 2017, 2018, 2019, 2020, 2021],
 						0)

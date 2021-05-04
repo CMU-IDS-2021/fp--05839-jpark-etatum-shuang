@@ -19,19 +19,19 @@ st.sidebar.title("Page")
 page = st.sidebar.selectbox(
     label="Page",
     options=[
+		"Raw data understanding",
 		"Time trend",
 		"Weekly trend",
 		"Heat map",
-        "Word cloud",
-		"Raw data understanding"
+        "Word cloud"
     ],
 )
 page_function_mapping: Dict[str, Callable[[pd.DataFrame], None]] = {
+	"Raw data understanding": raw_data,
 	"Time trend": line_chart,
 	"Weekly trend": violin_chart,
 	"Heat map": heatmap_chart,
     "Word cloud": wordcloud_chart,
-	"Raw data understanding": raw_data
 }
 page_function_mapping[page]()
 
