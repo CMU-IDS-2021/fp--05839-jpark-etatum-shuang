@@ -7,6 +7,7 @@ from src.weekly import violin_chart
 from src.heatmap import heatmap_chart
 from src.wordcloudd import wordcloud_chart
 from src.densitygraph import density_chart
+from src.expensive import table_chart
 
 # Title
 st.title("Airbnb Data Analysis 📊")
@@ -42,8 +43,9 @@ page = st.sidebar.selectbox(
 		"Time trend",
 		"Weekly trend",
 		"Heat map",
-        	"Word cloud",
-	    	"Location Density"
+        "Word cloud",
+	    "Location Density",
+		"Most Expensive Housing"
     ],
 )
 page_function_mapping: Dict[str, Callable[[pd.DataFrame], None]] = {
@@ -51,8 +53,10 @@ page_function_mapping: Dict[str, Callable[[pd.DataFrame], None]] = {
 	"Time trend": line_chart,
 	"Weekly trend": violin_chart,
 	"Heat map": heatmap_chart,
-    	"Word cloud": wordcloud_chart,
-	"Location Density" : density_chart
+    "Word cloud": wordcloud_chart,
+	"Location Density" : density_chart,
+	"Most Expensive Housing": table_chart,
+
 }
 page_function_mapping[page]()
 
