@@ -432,7 +432,7 @@ def generate_word_cloud(
 	import matplotlib.pyplot as plt
 
 	wc = WordCloud(background_color="white", max_words=1000)
-	wc.generate_from_frequencies(review_map_new[2015])
+	wc.generate_from_frequencies(review_map_new[year])
 
 	plt.imshow(wc, interpolation="bilinear")
 	plt.axis("off")
