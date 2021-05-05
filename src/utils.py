@@ -2,6 +2,10 @@ import pandas as pd
 import altair as alt
 import streamlit as st
 import plotly.graph_objects as go
+import nltk
+nltk.download('stopwords')
+import multidict as multidict
+
 
 import pandas as pd
 dates = ["2021-02-07",

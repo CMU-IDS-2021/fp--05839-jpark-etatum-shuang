@@ -10,9 +10,27 @@ from src.wordcloudd import wordcloud_chart
 # Title
 st.title("Airbnb Data Analysis 📊")
 st.markdown("			By Shicheng Huang, Jennifer Park, Eric Tatum")
-st.markdown("			In this project, we will take you through an exploitative tour with"
-			"the Airbnb dataset. We will make use of different attribute of this dataset "
-			"and tell a compelling story with the data we have :D ")
+st.markdown("			In this project, we will take you through an narrative tour with "
+			"the Inside Airbnb dataset. We will then tie this data to larger Los Angeles dentrification trends in Los Angeles. We will make use of different attribute of this dataset "
+			"and tell a compelling story with the data we have available.")
+
+# Introduction
+st.header("Project Purpose")
+st.markdown("Our project aims to examine the impact of the growth of Airbnb in Los Angeles and tying the data visualization to gentrification within the city. Our team will be using data from Inside Airbnb to visualize listing, pricing and property attributes. ")
+
+st.header("Project Hypothesis")
+st.markdown("We hypothesize that short term and long term rental services driven by Airbnb drive the displacement of communities by introducing a new revenue flow into traditionally low income housing markets.")
+
+
+st.image('img/image1.png', use_column_width=True)
+
+
+st.header("Project Background")
+st.markdown("Gentrification is the process by which neighborhoods are transformed such that neighborhoods that were once housed and catered to marginalized populations are impacted by an influx of middle and upper class residents which shifts the power dynamic and resource options available in the neighborhood. ")
+st.markdown("Airbnb has changed the way guests travel with the platform by directly embedding middle to upper class consumers within the community. This subsequently has significant impacts on the community where consumer temporarily reside. The popularity of Airbnb has driven investment property moguls to purchase low income housing that is necessary for the livelihood of low income households. ")
+
+
+st. markdown("Although Airbnb emphasizes empowering local home owners to supplement their income, Airbnb disproportionately impacts consumers in low income areas. Additionally, residents shape resources that is desirable in these areas. ")
 
 # Page choice
 st.sidebar.title("Page")

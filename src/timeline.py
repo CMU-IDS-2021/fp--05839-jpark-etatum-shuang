@@ -14,21 +14,25 @@ dates = ["2021-02-07",
 
 def line_chart():
 	# headers and stuff
-	st.header("Part 1: Average price of Airbnb housing")
+	st.header("Part 1: Average Price of Airbnb Housing Across Los Angeles")
 
 	# generate first chart
 	st.markdown("First, we took a look at the time trend of average pricing "
 				"data in Airbnb. We use different color to separate years of data."
 				"We can actually see that average price are going up year by year despite some "
 				"minor outliners in between.")
+
 	chart1 = generate_line_chart_all()
 	st.altair_chart(chart1)
 
+	st.markdown("As the price of the Airbnb houses increase, home owners in Los Angeles may be forced to sell their homes to real estate managers and housing properties in the area increase. As the property prices increase, native communities may be displaced from the homes they live in.")
+
 	# generate second chart
-	st.markdown("Secondly, we made an interactive chart below to let you explore on your own. Select"
+	st.markdown("To allow you to deep dive further, we made an interactive chart below to let you explore on your own. Select"
 				"the years you want to check out and shift-click on the bars to change the transparency of lines."
 				"And move your mouse to choose the date & average housing price of that day.")
-	years = st.multiselect('what years do you want to check out',
+
+	years = st.multiselect('What years do you want to map out over time?',
 							 [2015, 2016, 2017, 2018, 2019, 2020, 2021],
 							 [2015, 2016])
 	chart2 = generate_line_chart(years)
