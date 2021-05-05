@@ -18,3 +18,4 @@ def table_chart():
 	st.markdown("Based on the most recent Insider Airbnb data, the map showcases Airbnbs priced at over $1000 and the top percentiles of housing prices.")
 	st.map(df.query("price>=1000")[["latitude", "longitude"]].dropna(how="any"))
 	st.subheader("Our data found that the most expensive areas of Los Angeles are Santa Monica, Venice and Beverly Hills.")
+

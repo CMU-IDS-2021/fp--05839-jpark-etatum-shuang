@@ -34,6 +34,12 @@ st.markdown("Airbnb has changed the way guests travel with the platform by direc
 
 st. markdown("Although Airbnb emphasizes empowering local home owners to supplement their income, Airbnb disproportionately impacts consumers in low income areas. Additionally, residents shape resources that is desirable in these areas. ")
 
+def conclusion():
+	st.header("Conclusion")
+	st.subheader("Findings:")
+	st.markdown("The visualizations helped us identify core insights. Firstly, we were able to see similar trends around the price of Airbnbs in the locations where we saw trends of gentrification across Los Angeles. Secondly, we saw that these same areas has the highest prices within the same areas. The price of Airbnb in Hollywood and Venice have skyrocketed along with the number of Airbnbs within a population area. Finally, we found that there were a significant cluster of long term stays in the region which drives revenue to a population with significant wealth and power.")
+
+
 # Page choice
 st.sidebar.title("Page")
 page = st.sidebar.selectbox(
@@ -45,7 +51,8 @@ page = st.sidebar.selectbox(
 		"Heat map",
         "Word cloud",
 	    "Location Density",
-		"Most Expensive Housing"
+		"Most Expensive Housing",
+		"Conclusion"
     ],
 )
 page_function_mapping: Dict[str, Callable[[pd.DataFrame], None]] = {
@@ -56,6 +63,7 @@ page_function_mapping: Dict[str, Callable[[pd.DataFrame], None]] = {
     "Word cloud": wordcloud_chart,
 	"Location Density" : density_chart,
 	"Most Expensive Housing": table_chart,
+	"Conclusion": conclusion
 
 }
 page_function_mapping[page]()
@@ -68,3 +76,4 @@ st.sidebar.markdown(
     Many of the plots are interactive, you can zoom with scrolling and hover on data points for additional information.
     """
 )
+
