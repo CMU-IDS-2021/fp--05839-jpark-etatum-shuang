@@ -14,8 +14,12 @@ def table_chart():
 	st.markdown("Following are the top five most expensive properties.")
 	st.write(df.query("price>=1000").sort_values("price", ascending=False).head())
 	st.subheader("Shockingly, Airbnb property prices in Los Angeles can be over $21,000.")
+
+
 	st.subheader("Map Visualization")
 	st.markdown("Based on the most recent Insider Airbnb data, the map showcases Airbnbs priced at over $1000 and the top percentiles of housing prices.")
+	
 	st.map(df.query("price>=1000")[["latitude", "longitude"]].dropna(how="any"))
+	
 	st.subheader("Our data found that the most expensive areas of Los Angeles are Santa Monica, Venice and Beverly Hills.")
 

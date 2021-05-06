@@ -37,8 +37,15 @@ st. markdown("Although Airbnb emphasizes empowering local home owners to supplem
 def conclusion():
 	st.header("Conclusion")
 	st.subheader("Findings:")
-	st.markdown("The visualizations helped us identify core insights. Firstly, we were able to see similar trends around the price of Airbnbs in the locations where we saw trends of gentrification across Los Angeles. Secondly, we saw that these same areas has the highest prices within the same areas. The price of Airbnb in Hollywood and Venice have skyrocketed along with the number of Airbnbs within a population area. Finally, we found that there were a significant cluster of long term stays in the region which drives revenue to a population with significant wealth and power.")
+	st.markdown("The visualizations helped us identify core insights. First, we were able to see similar trends around the price of Airbnbs in the locations where we saw trends of gentrification across Los Angeles. Secondly, we saw that these same areas has the highest prices within the same areas. The price of Airbnb in Hollywood and Venice have skyrocketed along with the number of Airbnbs within a population area. Finally, we found that there were a significant cluster of long term stays in the region which drives revenue to a population with significant wealth and power.")
 
+	st.markdown("We did secondary research around what areas of Los Angeles were impacted by gentrification to compare to our results and insights. Here are L.A.’s top 10 most gentrified communities based on the Los Angeles Time below: Downtown, Venice, Hollywood, Silver Lake and Echo Park.")
+	st.image('img/image2.png', use_column_width=True)
+
+	st.subheader("Future Implications:")
+	st.markdown("In the future, our team would love to take our visualization and exploration another step forward. We would like to leverage more machine learning based models. We would like to use NLP models on the Airbnb reviews. More thorough models could provide greater fidelity in what is desired by renters. Other techniques such as sentiment analysis could help determine what factors lead to high renter satisfaction. We would also like to leverage machine learning to potentially predict future trends. ")
+
+	st.markdown("We would also be interested in incorporating other methods of measuring gentrification and adding it to our own visualizations. While we have referenced other sources to verify our findings, we would like to incorporate other common ways of measuring gentrification using sources such as the census. This could provide a more complex picture of gentrification, but we could also see how rental data relates to other indicators in both time and intensity.")
 
 # Page choice
 st.sidebar.title("Page")
